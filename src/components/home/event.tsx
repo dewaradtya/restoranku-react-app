@@ -137,7 +137,7 @@ const Event = () => {
               const actualIndex = Math.max(0, currentIndex - 2) + index;
 
               return (
-                <button
+                <span
                   key={actualIndex}
                   onClick={() => setCurrentIndex(actualIndex)}
                   className={`w-2 h-2 mx-1 rounded-full transition-colors ${

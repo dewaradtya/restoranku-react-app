@@ -7,7 +7,7 @@ import {
   FaRegUser,
   FaPhoneAlt,
   FaRegListAlt,
-  FaRegCalendar,
+  FaNewspaper,
 } from "react-icons/fa";
 import Cart from "../cart/cart";
 import { getCartItems } from "../../utils/cart";
@@ -34,12 +34,15 @@ const Navbar = () => {
     setCartItems(getCartItems());
   }, []);
 
-  const totalItemsInCart = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItemsInCart = cartItems.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
 
   const navItems = [
     { name: "Home", icon: FaHome, link: "/" },
     { name: "Menu", icon: FaRegListAlt, link: "/menu" },
-    { name: "Artikel", icon: FaRegCalendar, link: "/artikel" },
+    { name: "Artikel", icon: FaNewspaper, link: "/artikel" },
     { name: "Contact", icon: FaPhoneAlt, link: "/contact" },
   ];
 
@@ -73,12 +76,17 @@ const Navbar = () => {
             ))}
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/profile" className="text-stone-600 hover:text-green-600">
+            <Link
+              to="/profile"
+              className="text-stone-600 hover:text-green-600"
+              aria-label="Profile"
+            >
               <FaRegUser className="h-5 w-5" />
             </Link>
             <button
               onClick={openCart}
               className="relative text-stone-600 hover:text-green-600"
+              aria-label="View Cart"
             >
               <FaShoppingCart className="h-5 w-5" />
               {totalItemsInCart > 0 && (
@@ -91,6 +99,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-green-600"
+            aria-label="Toggle Menu"
           >
             <FaBars className="h-5 w-5" />
           </button>

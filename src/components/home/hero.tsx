@@ -49,7 +49,7 @@ const Hero = () => {
               alt="Hidangan Lezat RestoranKu"
               className="w-full h-auto rounded-2xl shadow-xl object-cover"
             />
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-md">
+            <div className="absolute -bottom-8 -left-2 sm:-bottom-6 sm:-left-6 bg-white p-4 rounded-lg shadow-md">
               <p className="text-yellow-500 font-bold text-xl">4.9 ⭐️</p>
               <p className="text-stone-600">Penilaian Pelanggan</p>
             </div>
